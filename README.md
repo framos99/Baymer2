@@ -35,7 +35,7 @@ you cannot see, and inputs that do not require a curated VCF.
 - **Contexts counted on the ancestral sequence**, not the focal one — the two
   differ at exactly the sites carrying a substitution, which is where the bias
   does most damage.
-- **Memory-mapped traces** with page release, so a whole 8-mer fit peaks at
+- **Memory-mapped traces** with page release, so a whole 9-mer fit peaks at
   0.49 GB instead of 3.45 GB.
 
 ## Installation
