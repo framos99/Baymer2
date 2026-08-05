@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baymer2"
+version = "0.1.0"
+description = "Bayesian hierarchical inference of context-dependent mutation spectra from polymorphism, substitution, and whole-genome alignment data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Fabian Ramos" }]
+keywords = [
+    "mutation rate",
+    "sequence context",
+    "bayesian",
+    "mcmc",
+    "population genetics",
+    "comparative genomics",
+    "phylogenetics",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "numba>=0.59",
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+# Reading FASTA/VCF for the polymorphism input path.
+bio = ["biopython>=1.81", "pysam>=0.22"]
+# Phylogenetics for the HAL/alignment input path.
+phylo = ["dendropy>=4.5"]
+# Optional gradient-based backend; not required by any shipped code path.
+jax = ["jax>=0.4", "numpyro>=0.13"]
+plot = ["matplotlib>=3.6", "seaborn>=0.12"]
+dev = ["pytest>=7.4", "pytest-xdist>=3.3"]
+
+[project.scripts]
+baymer2 = "baymer2.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/framos99/ReBaymer"
+Repository = "https://github.com/framos99/ReBaymer"
+Issues = "https://github.com/framos99/ReBaymer/issues"
+Documentation = "https://github.com/framos99/ReBaymer/tree/main/docs"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# So `pytest` works straight from a clone, without an install and without
+# PYTHONPATH: `src` for the package, `tests` for `from conftest import ...`.
+pythonpath = ["src", "tests"]
+markers = [
+    "slow: takes more than ~30s (deselect with '-m \"not slow\"')",
+    "legacy: needs a checkout of the original Baymer ($BAYMER2_LEGACY_ROOT)",
+    "hal: requires the HAL toolkit (halStats/hal2maf) to be available",
+]
+filterwarnings = ["error::RuntimeWarning"]

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "ReBaymer (baymer2): recurrence-aware Bayesian inference of context-dependent mutation spectra"
+message: "If you use this software, please cite it as below, and also cite the original Baymer it reimplements."
+type: software
+authors:
+  - given-names: Fabian
+    family-names: Ramos
+    email: fabiancarlos99@gmail.com
+# TODO before release: add any co-authors and their ORCIDs, and add a DOI
+# (Zenodo will mint one automatically if you enable it for the repo, then add:
+#   doi: 10.5281/zenodo.XXXXXXX
+# and a `preferred-citation:` block if a paper accompanies the release).
+repository-code: "https://github.com/framos99/ReBaymer"
+license: GPL-3.0-or-later
+version: 0.1.0
+keywords:
+  - mutation rate
+  - sequence context
+  - Bayesian hierarchical model
+  - MCMC
+  - population genetics
+  - comparative genomics
+references:
+  - type: software
+    title: "Baymer: Bayesian MCMC to estimate hierarchical tree-based sequence context models"
+    authors:
+      - given-names: Christopher
+        family-names: Adams
+    repository-code: "https://github.com/bvoightlab/Baymer"
+    license: GPL-3.0

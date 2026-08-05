@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.eggs/
+
+# Test / tooling caches
+.pytest_cache/
+.numba_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Model output. Traces are memory-mapped .npy files and a single fit can
+# write gigabytes; keep them out of the repo.
+runs/
+traces*/
+*.npy
+*.npy.tmp
+
+# Cluster job scripts and logs are generated per species -- regenerate
+# them rather than committing 577 near-identical files.
+jobs/
+*.bsub.out
+*.bsub.err
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
