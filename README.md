@@ -1,4 +1,4 @@
-# ReBaymer
+# Baymer2
 
 **Bayesian hierarchical inference of context-dependent mutation spectra, from
 polymorphism, substitution, or whole-genome alignment data.**
@@ -43,8 +43,8 @@ you cannot see, and inputs that do not require a curated VCF.
 Requires Python ≥ 3.10.
 
 ```bash
-git clone https://github.com/framos99/ReBaymer
-cd ReBaymer
+git clone https://github.com/framos99/Baymer2
+cd Baymer2
 pip install -e .
 ```
 
